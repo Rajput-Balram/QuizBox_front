@@ -1,4 +1,4 @@
-.App {
+/* .App {
   text-align: center;
 }
 
@@ -35,4 +35,16 @@
   to {
     transform: rotate(360deg);
   }
+} */
+.footer{
+  height: 40px;
+  background-color: grey;
+  width: 100%;
+  text-align: center;
+  margin-top: 81vh;
 }
+.login{
+  padding: 10px;
+  background-color: red;
+  color: green;
+} 
