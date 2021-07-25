@@ -4,6 +4,11 @@ import NavbarComponent from "./NavbarComponent";
 import FooterComponent from "./FooterComponent";
 import HomeComponent from "./HomeComponent";
 import AboutUsComponent from "./AboutUsComponent";
+import QuizComponent from "./QuizComponent";
+import LoginComponent from "./LoginComponent";
+import SignupComponent from "./SignupComponent";
+import AuthenticatedRoute from "./Services/AuthenticatedRoute";
+import ScoreTableComponent from "./ScoreTableComponent";
 class RoutingComponent extends Component {
     constructor(props) {
         super(props);
@@ -16,6 +21,10 @@ class RoutingComponent extends Component {
                 <Switch>
                     <Route path="/home" exact component={HomeComponent} />
                     <Route path="/aboutus" exact component={AboutUsComponent} />
+                    <AuthenticatedRoute Route path="/selected-quiz/:quiz" exact component={QuizComponent} />
+                    <Route path="/login" exact component={LoginComponent} />
+                    <Route path="/signup" exact component={SignupComponent} />
+                    <Route path="/check-score" exact component={ScoreTableComponent} />
                     <Route path="" exact component={HomeComponent} />
                 </Switch>
                 <FooterComponent></FooterComponent>

@@ -41,10 +41,46 @@
   background-color: grey;
   width: 100%;
   text-align: center;
-  margin-top: 81vh;
 }
 .login{
   padding: 10px;
   background-color: red;
   color: green;
 } 
+.tests{
+  width: 300px;
+  height: 300px;
+  margin: 20px;
+  border-radius: 35px;
+  padding: 10px;
+  background: linear-gradient(-110deg, lightblue 50%, deeppink 50%);
+  align-items: center;
+  text-align: center;
+  cursor: pointer;
+  position: relative;
+  backface-visibility: hidden;
+}
+.quizButton{
+  position: absolute;
+  top: 50%;
+  left: 30%;
+  transition: .5s ease;
+  opacity: 0;
+}
+.tests:hover .logo{
+  transition: .5s ease;
+  opacity: 0.4 !important;
+}
+.tests:hover .quizButton{
+  opacity: 1;
+}
+Form{
+  width: 400px;
+  background-color: rgb(136, 122, 122);
+  padding: 20px;
+  margin: 20px auto;
+  border-radius: 40px;
+}
+.show{
+  margin-right: 50px;
+}
