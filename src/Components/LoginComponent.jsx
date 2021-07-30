@@ -27,6 +27,20 @@ class LoginComponent extends Component {
             password:this.state.password,
             error:'',
         };
+        if(event.target.isAdmin.checked){
+            if(userData.email==="balram@gmail.com" && userData.password==="balram@123"){
+                console.log(userData);
+                sessionStorage.setItem("admin",JSON.stringify(userData))
+                window.location.href="http://localhost:3000/admin"
+                return;
+            }
+            else{
+                this.setState({error:"Invalid Credentials!!"})
+                return;
+            }
+
+            return;
+        }
         // const error='';
         // if(this.state.email===''){
         //     error+='Email is missing';
@@ -89,7 +103,7 @@ class LoginComponent extends Component {
                             placeholder="Password"
                             style={{ marginLeft: "2px" }}
                         />
-                        <Label for="isExpertLogin" style={{ marginLeft: "17px" }}>
+                        <Label for="isAdminLogin" style={{ marginLeft: "17px" }}>
                             Are you Admin?
                         </Label>
                     </FormGroup>

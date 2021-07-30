@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { Link, Redirect } from "react-router-dom";
 import { Input, FormGroup, Label, Button, Form } from "reactstrap"
 import allFunctions from "./Services/Functions.js"
+import {Alert} from "react-bootstrap"
 
 export default class SignupComponent extends Component {
     constructor(props){
@@ -42,10 +43,16 @@ export default class SignupComponent extends Component {
             email:this.state.email,
             mobile:this.state.mobile,
             password:this.state.password,
+            error:'',
         };
         allFunctions.addUser(userData).then(
             (response)=>{
                 console.log(response);
+                if(!response.data){
+                    this.setState({error:"Account already exist with this email!! \n Please login"})
+                    
+                    return;  
+                }
                 this.props.history.push("/login")
             },
             (error)=>{
@@ -58,6 +65,9 @@ export default class SignupComponent extends Component {
             <div className="container ">
                 <Form onSubmit={this.handleSubmit}>
                     <h1>SignUp Form</h1>
+                    {this.state.error && <Alert  variant="danger">
+                    {this.state.error}
+                  </Alert>}
                     <FormGroup>
                         <Label for="name" Col="sm-6">Full Name</Label>
                         <Input
@@ -71,7 +81,7 @@ export default class SignupComponent extends Component {
                         />
                     </FormGroup>
                     <FormGroup>
-                        <Label for="name" Col="sm-6">Phone Number</Label>
+                        <Label for="phone" Col="sm-6">Phone Number</Label>
                         <Input
                             Col="sm-6"
                             type="text"

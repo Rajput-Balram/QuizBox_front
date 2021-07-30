@@ -42,8 +42,9 @@ export default class QuizComponent extends Component {
         )
     }
     onChangeValue(event) {
-        // console.log(event.target.value);
+        //console.log(event.target.value);
         const index = event.target.id;
+        //console.log(event.target.id)
         const allquestions = this.state.quizBox;
         allquestions[index].choice = event.target.value;
         this.setState({ quizBox: allquestions });

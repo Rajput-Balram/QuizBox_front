@@ -84,3 +84,10 @@ Form{
 .show{
   margin-right: 50px;
 }
+.admin{
+  width: 550px;
+  border: 1px solid black;
+  padding: 30px;
+  margin: 20px auto;
+  border-radius: 15px;
+}

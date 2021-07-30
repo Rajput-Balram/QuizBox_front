@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import allFunctions from "./Services/Functions"
 
-export default class ScoreTableComponent extends Component {
+export default class AllScoreTableComponent extends Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -9,8 +9,8 @@ export default class ScoreTableComponent extends Component {
         }
     }
     componentDidMount() {
-        const id = JSON.parse(sessionStorage.getItem("user")).id;
-        allFunctions.getScoreTable(id).then(
+        // const id = JSON.parse(sessionStorage.getItem("admin")).id;
+        allFunctions.getAllScoreTable().then(
             (response) => {
                 this.setState({ scoreTable: response.data });
             },
@@ -28,6 +28,7 @@ export default class ScoreTableComponent extends Component {
                     (<table className="table">
                         <thead>
                             <tr>
+                                 
                                 <th>S. No</th>
                                 <th>User Name</th>
                                 <th>Language</th>
@@ -36,9 +37,9 @@ export default class ScoreTableComponent extends Component {
                             </tr>
                         </thead>
                         <tbody>
-                            {this.state.scoreTable.map((item,index)=>(
+                            {this.state.scoreTable.map((item, index) => (
                                 <tr>
-                                    <td>{index+1}</td>
+                                    <td>{index + 1}</td>
                                     <td>{item.userName.toUpperCase()}</td>
                                     <td>{item.category}</td>
                                     <td>{item.score}</td>

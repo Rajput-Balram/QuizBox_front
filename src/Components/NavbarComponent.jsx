@@ -12,6 +12,10 @@ class NavbarComponent extends Component {
         sessionStorage.removeItem("user");
         window.location.href="http://localhost:3000/login"
     }
+    handleAdminLogout(){
+        sessionStorage.removeItem("admin")
+        window.location.href="http://localhost:3000/login"
+    }
     render() {
         return (
             <>
@@ -27,7 +31,8 @@ class NavbarComponent extends Component {
                             </NavDropdown>
                             <Link className="nav-link" to="/aboutus">About Us</Link>
                         </Nav>
-                        {!allFunctions.isUserLoggedIn() && <Link to="/login"><Button color="success">Login</Button></Link>}
+                        {!allFunctions.isUserLoggedIn() && !allFunctions.isAdminLoggedIn() && <Link to="/login"><Button color="success">Login</Button></Link>}
+                        {/* {allFunctions.isAdminLoggedIn() && <Link to="/admin"><Button color="success">Admin Panel</Button></Link>} */}
                     </Container>
                     {allFunctions.isUserLoggedIn() &&
                         <>
@@ -40,6 +45,24 @@ class NavbarComponent extends Component {
                                     <NavDropdown.Item href="/check-score">Quiz History</NavDropdown.Item>
                                     <NavDropdown.Divider />
                                     <NavDropdown.Item onClick={this.handleLogout} style={{color:"red"}}>Logout</NavDropdown.Item>
+                                </NavDropdown>
+                            </Nav>
+                        </>
+                    }
+
+                    {/* admin */}
+
+                    {allFunctions.isAdminLoggedIn() &&
+                        <>
+                            <Nav className="me-auto ">
+                                <NavDropdown className="me-auto " 
+                                title={(JSON.parse(sessionStorage.getItem("admin")).email)+" Admin"} 
+                                id="navbarScrollingDropdown"
+                                style={{right:"50px"}}
+                                >
+                                    <NavDropdown.Item href="/check-score-all">LeaderBoard</NavDropdown.Item>
+                                    <NavDropdown.Divider />
+                                    <NavDropdown.Item onClick={this.handleAdminLogout} style={{color:"red"}}>Logout</NavDropdown.Item>
                                 </NavDropdown>
                             </Nav>
                         </>

@@ -19,5 +19,14 @@ class Functions{
     getScoreTable(id){
         return axios.get(`${SERVER_URL}/check-score/${id}`);
     }
+    addQuestion(data){
+        return axios.post(`${SERVER_URL}/question`,data);
+    }
+    isAdminLoggedIn(){
+        return sessionStorage.getItem("admin")!=null; 
+    }
+    getAllScoreTable(){
+        return axios.get(`${SERVER_URL}/check-score-all/`);
+    }
 }
 export default new Functions();
