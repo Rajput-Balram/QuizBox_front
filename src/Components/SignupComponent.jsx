@@ -45,6 +45,12 @@ export default class SignupComponent extends Component {
             password:this.state.password,
             error:'',
         };
+        if(this.state.password !== this.state.cpassword){
+            //this.state.error="password shoult match"
+            this.setState({error:"password shoult match"})
+            return;
+        }
+
         allFunctions.addUser(userData).then(
             (response)=>{
                 console.log(response);

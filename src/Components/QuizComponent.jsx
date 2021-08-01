@@ -71,7 +71,7 @@ export default class QuizComponent extends Component {
                     }
                     {this.state.isSubmitted && <h4 style={{color:"green"}}>Your Score is:{"  "}<b >{this.state.score}</b></h4>}
                     {!this.state.isSubmitted &&<Button color="success " className="mb-2" onClick={this.handleSubmit} >Submit Your Answers</Button>}
-                    {this.state.isSubmitted &&<Button color="success " className="mb-2" onClick={this.handleSubmit} disabled>Submit Your Answers</Button>}
+                    {this.state.isSubmitted &&<Button color="success " className="mb-2"  disabled>Submit Your Answers</Button>}
                 </div>
             </div>
         )
