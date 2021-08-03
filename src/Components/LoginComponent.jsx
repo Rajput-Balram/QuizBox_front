@@ -52,7 +52,7 @@ class LoginComponent extends Component {
         allFunctions.login(userData).then(
             (response)=>{
                 if(!response.data){
-                    this.setState({error:"Invalid Credentials!!"})
+                    this.setState({error:"Invalid Credentials!! \n please create an account"})
                     return;
                 }
                 sessionStorage.setItem("user",JSON.stringify(response.data));

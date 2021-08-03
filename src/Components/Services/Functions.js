@@ -28,5 +28,8 @@ class Functions{
     getAllScoreTable(){
         return axios.get(`${SERVER_URL}/check-score-all/`);
     }
+    getAllUser(){
+        return axios.get(`${SERVER_URL}/user/`);
+    }
 }
 export default new Functions();

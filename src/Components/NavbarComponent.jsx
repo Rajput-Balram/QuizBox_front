@@ -62,6 +62,8 @@ class NavbarComponent extends Component {
                                 >
                                     <NavDropdown.Item href="/check-score-all">LeaderBoard</NavDropdown.Item>
                                     <NavDropdown.Divider />
+                                    <NavDropdown.Item href="/get-allUser">User's</NavDropdown.Item>
+                                    <NavDropdown.Divider />
                                     <NavDropdown.Item onClick={this.handleAdminLogout} style={{color:"red"}}>Logout</NavDropdown.Item>
                                 </NavDropdown>
                             </Nav>

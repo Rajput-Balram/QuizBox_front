@@ -12,6 +12,7 @@ import AdminRoute from "./Services/AdminRoute";
 import ScoreTableComponent from "./ScoreTableComponent";
 import AdminComponent from "./AdminComponent";
 import AllScoreTableComponent from "./AllScoreTableComponent";
+import AllUserComponent from "./AllUserComponent";
 class RoutingComponent extends Component {
     constructor(props) {
         super(props);
@@ -30,6 +31,7 @@ class RoutingComponent extends Component {
                     <Route path="/signup" exact component={SignupComponent} />
                     <Route path="/check-score" exact component={ScoreTableComponent} />
                     <Route path="/check-score-all" exact component={AllScoreTableComponent} />
+                    <Route path="/get-allUser" exact component={AllUserComponent} />
                     <Route path="" exact component={HomeComponent} />
                 </Switch>
                 <FooterComponent></FooterComponent>
