@@ -33,6 +33,8 @@ export default class AdminComponent extends Component {
         allfunctions.addQuestion(data).then(
             (reponse) => {
                 console.log(reponse);
+                window.alert("added successfully");
+                window.location.reload();
             },
             (error) => {
                 console.log(error);
